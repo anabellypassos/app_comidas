@@ -1,9 +1,12 @@
+import 'package:app_comidas/screens/categories_sreens.dart';
 import 'package:flutter/material.dart';
-import './screens/categories_sreens.dart';
-import './screens/categories_meals_screen.dart';
-import './utils/app_routes.dart';
+import 'screens/categories_screen.dart';
+import 'screens/categories_meals_screen.dart';
+import 'utils/app_routes.dart';
 
-void main() => runApp(const MyApp());
+void main() {
+  runApp(const MyApp());
+}
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -11,23 +14,25 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        title: 'DeliMeals',
-        theme: ThemeData(
-          primarySwatch: Colors.pink,
-          hintColor: Colors.amber,
-          fontFamily: 'Raleway',
-          canvasColor: const Color.fromRGBO(255, 254, 229, 1),
-          textTheme: ThemeData.light().textTheme.copyWith(
-                titleLarge: const TextStyle(
-                    fontSize: 20, fontFamily: 'RobotoCondensed'),
-              ),
+      title: 'Vamos Cozinhar?',
+      theme: ThemeData(
+        colorScheme: ColorScheme.fromSwatch().copyWith(
+          primary: Colors.pink,
+          secondary: Colors.amber,
         ),
-        routes: {
-          
-          AppRoutes.Home:(ctx) =>const CategoriesSreens(),
-          AppRoutes.CATEGORIES_MEALS: (ctx) => const CategoriesMealsScreen(),
-          },
-          );
-          
+        canvasColor: const Color.fromRGBO(255, 254, 229, 1),
+        fontFamily: 'Raleway',
+        textTheme: ThemeData.light().textTheme.copyWith(
+             titleLarge: const TextStyle(
+                fontSize: 20,
+                fontFamily: 'RobotoCondensed',
+              ),
+            ),
+      ),
+      routes: {
+        AppRoutes.home: (ctx) => const CategoriesScreen(),
+        AppRoutes.categoriesMeals: (ctx) => const CategoriesMealsScreen(),
+      },
+    );
   }
 }

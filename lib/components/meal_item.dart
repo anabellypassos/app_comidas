@@ -80,7 +80,7 @@ class MealItem extends StatelessWidget {
                     children: [
                       const Icon(Icons.attach_money),
                       const SizedBox(width: 6),
-                      Text(meal.complexityText),
+                      Text(meal.costText),
                     ],
                   ),
                 ],
